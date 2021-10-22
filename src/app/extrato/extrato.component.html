@@ -1,5 +1,16 @@
-<div *ngFor="let Transferencia of Transferencias">
-  <p>id: {{Transferencia?.id}}</p>
-  <p>valor: {{Transferencia?.valor}}</p>
-  <p>destino: {{Transferencia?.destino}}</p>
-</div>
+<table class="tabela">
+  <thead class="tabela__cabecalho">
+    <th class="tabela__cabecalho__conteudo">Id</th>
+    <th class="tabela__cabecalho__conteudo">Valor</th>
+    <th class="tabela__cabecalho__conteudo">Destino</th>
+  </thead>
+  <tbody>
+    <tr class="tabela__linha" *ngFor="let Transferencia of Transferencias">
+      <td class="tabela__conteudo">{{Transferencia?.id }}</td>
+      <td class="tabela__conteudo">{{Transferencia?.valor | currency}}</td>
+      <td class="tabela__conteudo">{{Transferencia.destino}}</td>
+    </tr>
+  </tbody>
+</table>
+
+

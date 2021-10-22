@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  id = 0;
+  id = 1;
   title = 'bytebank';
   Transferencia: any[] = [];
 
