@@ -1,1 +1,5 @@
-<p>extrato works!</p>
+<div *ngFor="let Transferencia of Transferencias">
+  <p>id: {{Transferencia?.id}}</p>
+  <p>valor: {{Transferencia?.valor}}</p>
+  <p>destino: {{Transferencia?.destino}}</p>
+</div>

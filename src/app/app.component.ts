@@ -7,11 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  id = 0;
   title = 'bytebank';
-  Transferencia: any;
+  Transferencia: any[] = [];
+
 
   tranferirParaAppComponent($event: any) {
-    this.Transferencia = $event;
+
+    const addId = {...$event,id:this.id++};
+
+    this.Transferencia.push(addId);
   }
 }
 

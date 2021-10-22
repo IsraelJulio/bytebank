@@ -1,7 +1,11 @@
-<app-nova-transferencia (aoTransferir)="tranferirParaAppComponent($event)" ></app-nova-transferencia>
+<body>
 
-<p>valor: {{Transferencia?.valor}}</p>
-<p>destino: {{Transferencia?.destino}}</p>
+  <app-nova-transferencia (aoTransferir)="tranferirParaAppComponent($event)" ></app-nova-transferencia>
+  <app-extrato [Transferencias]="Transferencia"></app-extrato>
+  <footer>
+    <app-rodape></app-rodape>
+  </footer>
+</body>
 
-<app-rodape></app-rodape>
-<app-extrato></app-extrato>
+
+
