@@ -19,7 +19,8 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "strictPropertyInitialization": false // para desativar a obrigatoriedade de inicializar uma variável
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

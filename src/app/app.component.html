@@ -1,2 +1,7 @@
-<app-nova-transferencia></app-nova-transferencia>
+<app-nova-transferencia (aoTransferir)="tranferirParaAppComponent($event)" ></app-nova-transferencia>
+
+<p>valor: {{Transferencia?.valor}}</p>
+<p>destino: {{Transferencia?.destino}}</p>
+
 <app-rodape></app-rodape>
+<app-extrato></app-extrato>
