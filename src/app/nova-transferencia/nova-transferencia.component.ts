@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Transferencia } from 'models/transferencia.model';
 import { TransferenciaService } from '../services/transferencia.service';
 
@@ -23,6 +24,8 @@ export class NovaTransferenciaComponent {
     this.transferenciaService.adicionar(valoresParaEmitir)
     .subscribe((resultado) =>{
       this.LimparCampos();
+      this.router.navigateByUrl('extrato');
+
     },(error)=> console.error('deu ruim') )
 
 
@@ -33,5 +36,6 @@ export class NovaTransferenciaComponent {
   };
 
 
-  constructor(private transferenciaService: TransferenciaService){}
+  constructor(private transferenciaService: TransferenciaService,
+    private router: Router){}
 }
