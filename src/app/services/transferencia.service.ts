@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class TransferenciaService {
-  private id = 1;
+  private id = 100;
   private url = 'http://localhost:3000/transferencias';
 
   private listaTransferencia: any[];
@@ -23,14 +23,16 @@ export class TransferenciaService {
     return this.httpClient.get<Transferencia[]>(this.url)
   }
 
-  adicionar(transferencia: Transferencia) {
-    this.colocarId(transferencia);
+  adicionar(transferencia: Transferencia):Observable<Transferencia> {
+    // this.colocarId(transferencia);
     this.colocarData(transferencia);
-
-    this.listaTransferencia.push(transferencia);
+    console.log('final',transferencia);
+    return this.httpClient.post<Transferencia>(this.url,transferencia);
   }
   private colocarId(transferencia: Transferencia) {
+    console.log('coloca id',transferencia);
     transferencia.id = this.id++;
+
   }
   private colocarData(transferencia: Transferencia) {
     transferencia.data = new Date();

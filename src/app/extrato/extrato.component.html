@@ -1,4 +1,4 @@
-<table class="tabela" *ngIf="Transferencias.length > 0; else listaVazia">
+<table class="tabela" *ngIf="!!Transferencias; else listaVazia">
   <thead class="tabela__cabecalho">
     <th class="tabela__cabecalho__conteudo">Id</th>
     <th class="tabela__cabecalho__conteudo">Valor</th>
