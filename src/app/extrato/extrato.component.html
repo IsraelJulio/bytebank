@@ -1,11 +1,11 @@
-<table class="tabela">
+<table class="tabela" *ngIf="Transferencias.length > 0; else listaVazia">
   <thead class="tabela__cabecalho">
     <th class="tabela__cabecalho__conteudo">Id</th>
     <th class="tabela__cabecalho__conteudo">Valor</th>
     <th class="tabela__cabecalho__conteudo">Destino</th>
     <th class="tabela__cabecalho__conteudo">Data</th>
   </thead>
-  <tbody *ngIf="Transferencias.length > 0; else listaVazia">
+  <tbody>
     <tr class="tabela__linha" *ngFor="let Transferencia of Transferencias">
       <td class="tabela__conteudo">{{Transferencia?.Id }}</td>
       <td class="tabela__conteudo">{{Transferencia?.valor | currency}}</td>
@@ -15,6 +15,6 @@
   </tbody>
 </table>
 <ng-template #listaVazia>
-  <p> Nenhuma operação cadastrada</p>
+  <p style="text-align: center;" > Nenhuma operação cadastrada</p>
 </ng-template>
 
